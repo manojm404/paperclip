@@ -43,6 +43,14 @@ import {
   agentConfigurationDoc as openclawGatewayAgentConfigurationDoc,
   models as openclawGatewayModels,
 } from "@paperclipai/adapter-openclaw-gateway";
+import {
+  execute as forgelabExecute,
+  testEnvironment as forgelabTestEnvironment,
+} from "@paperclipai/adapter-forgelab-local/server";
+import {
+  agentConfigurationDoc as forgelabAgentConfigurationDoc,
+  models as forgelabModels,
+} from "@paperclipai/adapter-forgelab-local";
 import { listCodexModels } from "./codex-models.js";
 import { listCursorModels } from "./cursor-models.js";
 import {
@@ -157,6 +165,15 @@ const hermesLocalAdapter: ServerAdapterModule = {
   agentConfigurationDoc: hermesAgentConfigurationDoc,
 };
 
+const forgelabLocalAdapter: ServerAdapterModule = {
+  type: "forgelab_local",
+  execute: forgelabExecute,
+  testEnvironment: forgelabTestEnvironment,
+  models: forgelabModels,
+  supportsLocalAgentJwt: false,
+  agentConfigurationDoc: forgelabAgentConfigurationDoc,
+};
+
 const adaptersByType = new Map<string, ServerAdapterModule>(
   [
     claudeLocalAdapter,
@@ -167,6 +184,7 @@ const adaptersByType = new Map<string, ServerAdapterModule>(
     geminiLocalAdapter,
     openclawGatewayAdapter,
     hermesLocalAdapter,
+    forgelabLocalAdapter,
     processAdapter,
     httpAdapter,
   ].map((a) => [a.type, a]),

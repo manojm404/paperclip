@@ -66,6 +66,7 @@ export const adapterLabels: Record<string, string> = {
   cursor: "Cursor (local)",
   process: "Process",
   http: "HTTP",
+  forgelab_local: "ForgeLab Local",
 };
 
 export const roleLabels = AGENT_ROLE_LABELS as Record<string, string>;

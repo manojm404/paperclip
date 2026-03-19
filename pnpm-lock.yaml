@@ -145,6 +145,22 @@ importers:
         specifier: ^5.7.3
         version: 5.9.3
 
+  packages/adapters/forgelab-local:
+    dependencies:
+      '@paperclipai/adapter-utils':
+        specifier: workspace:*
+        version: link:../../adapter-utils
+      picocolors:
+        specifier: ^1.1.1
+        version: 1.1.1
+    devDependencies:
+      '@types/node':
+        specifier: ^24.6.0
+        version: 24.12.0
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+
   packages/adapters/gemini-local:
     dependencies:
       '@paperclipai/adapter-utils':
@@ -444,6 +460,9 @@ importers:
       '@paperclipai/adapter-cursor-local':
         specifier: workspace:*
         version: link:../packages/adapters/cursor-local
+      '@paperclipai/adapter-forgelab-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/forgelab-local
       '@paperclipai/adapter-gemini-local':
         specifier: workspace:*
         version: link:../packages/adapters/gemini-local
@@ -589,6 +608,9 @@ importers:
       '@paperclipai/adapter-cursor-local':
         specifier: workspace:*
         version: link:../packages/adapters/cursor-local
+      '@paperclipai/adapter-forgelab-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/forgelab-local
       '@paperclipai/adapter-gemini-local':
         specifier: workspace:*
         version: link:../packages/adapters/gemini-local
